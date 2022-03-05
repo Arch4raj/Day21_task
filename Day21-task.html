@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="countdown">10</h1> 
+    <script>
+        const msg=(countdown) =>
+        new Promise((resolve,reject)=>{
+      if(countdown>=1){
+          setTimeout(()=>{
+           document.querySelector(".countdown").innerText=countdown;  
+            resolve (countdown);
+          },1000)
+      }else{
+          reject("end");
+      }
+ });
+ msg(10)
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .then(n=>msg(--n))
+ .catch(()=>{
+     setTimeout(()=>{
+           document.querySelector(".countdown").innerText="Happy Independence Day"},1000)
+ })
+ </script>
+</body>
+</html>
